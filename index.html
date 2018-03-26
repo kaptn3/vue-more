@@ -8,7 +8,7 @@
 <div id="app">
   <ul>
     <li v-for="n in count">{{ items[n-1] }}</li>
-    <button @click="showMore">More</button>
+    <button v-if="isShowing" @click="showMore">More</button>
   </ul>
 </div>
 <noscript>We're sorry but site doesn't work properly without JavaScript enabled. Please enable it to continue.</noscript>

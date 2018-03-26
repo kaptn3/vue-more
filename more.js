@@ -13,13 +13,11 @@ let app = new Vue({
       { id: 9, name: 'List item' },
       { id: 10, name: 'List item' },
       { id: 11, name: 'List item' },
-      { id: 12, name: 'List item' },
-      { id: 13, name: 'List item' },
-      { id: 14, name: 'List item' },
-      { id: 15, name: 'List item' }
+      { id: 12, name: 'List item' }
     ],
     view: 5,
-    count: 5
+    count: 5,
+    isShowing: true
   },
   methods: {
     showMore () {
@@ -27,8 +25,11 @@ let app = new Vue({
         if ((this.count + this.view) <= this.items.length) {
         this.count += this.view;
         } else {
-          this.count += this.count + this.view - this.items.length - 1;
+          this.count += this.items.length - this.count;
         }
+      }
+      if (this.count === this.items.length) {
+        this.isShowing = false;
       }
     }
   }
