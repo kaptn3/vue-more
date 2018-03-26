@@ -18,18 +18,18 @@ let app = new Vue({
       { id: 14, name: 'List item' },
       { id: 15, name: 'List item' }
     ],
+    view: 5,
     count: 5
   },
   methods: {
     showMore () {
       if (this.count < this.items.length) {
-        if ((this.count + 5) <= this.items.length) {
-        this.count += 5;
+        if ((this.count + this.view) <= this.items.length) {
+        this.count += this.view;
         } else {
-          this.count += this.count + 5 - this.items.length - 1;
+          this.count += this.count + this.view - this.items.length - 1;
         }
       }
-      console.log(this.count);
     }
   }
 })
