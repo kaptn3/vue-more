@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>More</title>
+  <meta charset="utf-8">
+</head>
+<body>
+<div id="app">
+  <ul>
+    <li v-for="n in count">{{ items[n-1] }}</li>
+    <button @click="showMore">More</button>
+  </ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="more.js"></script>
+</body>
+</html>
